@@ -147,37 +147,15 @@
   .ft{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:10px;
     color:var(--bur);opacity:.48;margin-top:6px;letter-spacing:.5px;}
   /* Icone Decoratiche */
-  .deco-icon { width: 34px; height: 34px; color: var(--gold); opacity: 0.8; margin: 0 auto 12px; display: block; stroke-width: 1.2px; }
+  .deco-icon { width: 44px; height: 44px; color: var(--gold); opacity: 0.8; margin: 0 auto 12px; display: block; stroke-width: 1.2px; }
   .so svg { width:60px; height:auto; color:var(--gold); }
 
-  /* Animazioni */
-  @keyframes fadeUp {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-  .inner > div {
-    animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
-  }
-  .inner > div:nth-child(1) { animation-delay: 0.1s; }
-  .inner > div:nth-child(2) { animation-delay: 0.15s; }
-  .inner > div:nth-child(3) { animation-delay: 0.2s; }
-  .inner > div:nth-child(4) { animation-delay: 0.25s; }
-  .inner > div:nth-child(5) { animation-delay: 0.3s; }
-  .inner > div:nth-child(6) { animation-delay: 0.35s; }
-  .inner > div:nth-child(7) { animation-delay: 0.4s; }
-  .inner > div:nth-child(8) { animation-delay: 0.45s; }
-  .inner > div:nth-child(9) { animation-delay: 0.5s; }
-  .inner > div:nth-child(10) { animation-delay: 0.55s; }
-  .inner > div:nth-child(11) { animation-delay: 0.6s; }
-  .inner > div:nth-child(12) { animation-delay: 0.65s; }
-  .inner > div:nth-child(13) { animation-delay: 0.7s; }
-  .inner > div:nth-child(14) { animation-delay: 0.75s; }
-  .inner > div:nth-child(15) { animation-delay: 0.8s; }
-  .inner > div:nth-child(16) { animation-delay: 0.85s; }
-  .inner > div:nth-child(17) { animation-delay: 0.9s; }
-  .inner > div:nth-child(18) { animation-delay: 0.95s; }
-  .inner > div:nth-child(19) { animation-delay: 1.0s; }
-  .inner > div:nth-child(20) { animation-delay: 1.05s; }
+  /* Hero Illustration Styles */
+  .hero-illustration { width: 100%; max-width: 600px; margin: 10px auto 30px; text-align: center; }
+  .hero-illustration svg { width: 85%; height: auto; color: var(--gold); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .hero-illustration video { width: 85%; max-width: 480px; height: auto; object-fit: contain; }
+
+  /* GSAP Animations handled in js/menu-animations.js */
 </style>
 </head><body>
 <div class="page">
@@ -191,10 +169,21 @@
       <div class="bsub">Cucina &amp; Vino</div>
       <div class="orn"><div class="orn-d"></div></div>
     </div>
+    
+    <!-- MAIN HERO ILLUSTRATION CONTAINER -->
+    <div class="hero-illustration" id="hero-food">
+      <video width="800" height="400" autoplay loop muted playsinline src="hero-food.webm?v=5"></video>
+    </div>
+    
     <div class="sec">
       <div class="sh">
-        <svg class="deco-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        <svg class="deco-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+          <!-- Charcuterie Board -->
+          <ellipse cx="32" cy="32" rx="26" ry="12" />
+          <path d="M6 32 V36 C6 42.6 17.6 48 32 48 C46.4 48 58 42.6 58 36 V32" />
+          <path d="M28 28 A5 5 0 0 1 38 28 A5 5 0 0 1 28 28" />
+          <ellipse cx="44" cy="30" rx="4" ry="2" />
+          <ellipse cx="20" cy="30" rx="4" ry="2" />
         </svg>
         <span class="st">Antipasti / Appetizers</span>
         <span class="ss">Sapori da condividere</span>
@@ -225,8 +214,13 @@
 
     <div class="sec">
       <div class="sh">
-        <svg class="deco-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M2 12h20"/><path d="M4 12c0 4.4 3.6 8 8 8s8-3.6 8-8"/><path d="M12 2v6"/><path d="M8 3v5"/><path d="M16 3v5"/>
+        <svg class="deco-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+          <!-- Fork with Spaghetti -->
+          <path d="M32 58 V34" />
+          <path d="M24 8 V24 C24 30 40 30 40 24 V8" />
+          <path d="M29 8 V24" />
+          <path d="M35 8 V24" />
+          <path d="M18 28 C26 22 38 38 46 28 C48 24 44 20 40 20 C32 20 32 30 26 30 C20 30 18 28 18 28Z" />
         </svg>
         <span class="st">Primi Piatti / First Courses</span>
         <span class="ss">Tradizione romana</span>
@@ -237,37 +231,41 @@
         <div class="ir"><div><span class="in">Pappardelle fatte in casa ai funghi di stagione</span><span class="ia"> (A, C, G)</span></div><div style="display:flex; justify-content:flex-end; align-items:baseline; gap:8px;"><span class="ip" style="min-width:30px;">16€</span><span class="ip" style="width:65px; text-align:center; min-width:auto;">35€</span></div></div>
         <div class="id-en">homemade pappardelle with seasonal mushrooms</div>
       </div>      <div class="it">
+        <div class="ir"><div><span class="in">Gnocchi fatti a mano al ragù napoletano</span><span class="ia"> (A, C, G)</span></div><div style="display:flex; justify-content:flex-end; align-items:baseline; gap:8px;"><span class="ip" style="min-width:30px;">16€</span><span class="ip" style="width:65px; text-align:center; min-width:auto;">35€</span></div></div>
+        <div class="id">con costine di maiale, salsiccia e polpettine di manzo</div><div class="id-en">handmade gnocchi with Neapolitan ragù with pork ribs, sausage and beef meatballs</div>
+      </div>      <div class="it">
+        <div class="ir"><div><span class="in">Orecchiette alla positanese</span><span class="ia"> (A, G)</span></div><div style="display:flex; justify-content:flex-end; align-items:baseline; gap:8px;"><span class="ip" style="min-width:30px;">16€</span><span class="ip" style="width:65px; text-align:center; min-width:auto;">35€</span></div></div>
+        <div class="id">con ragù di salsiccia paesana, pomodoro ciliegino e burrata</div><div class="id-en">Positano style with village sausage ragout, cherry tomato and burrata</div>
+      </div>      <div class="it">
         <div class="ir"><div><span class="in">Bucatini alla amatriciana</span><span class="ia"> (A, G)</span></div><div style="display:flex; justify-content:flex-end; align-items:baseline; gap:8px;"><span class="ip" style="min-width:30px;">15€</span><span class="ip" style="width:65px; text-align:center; min-width:auto;">33€</span></div></div>
         <div class="id-en">bucatini amatriciana style</div>
       </div>      <div class="it">
         <div class="ir"><div><span class="in">Pici alla carbonara</span><span class="ia"> (A, C, G)</span></div><div style="display:flex; justify-content:flex-end; align-items:baseline; gap:8px;"><span class="ip" style="min-width:30px;">15€</span><span class="ip" style="width:65px; text-align:center; min-width:auto;">33€</span></div></div>
         <div class="id-en">pici carbonara</div>
       </div>      <div class="it">
-        <div class="ir"><div><span class="in">Gnocchi fatti a mano al ragù napoletano</span><span class="ia"> (A, C, G)</span></div><div style="display:flex; justify-content:flex-end; align-items:baseline; gap:8px;"><span class="ip" style="min-width:30px;">16€</span><span class="ip" style="width:65px; text-align:center; min-width:auto;">35€</span></div></div>
-        <div class="id">con costine di maiale, salsiccia e polpettine di manzo</div><div class="id-en">handmade gnocchi with Neapolitan ragù with pork ribs, sausage and beef meatballs</div>
-      </div>      <div class="it">
         <div class="ir"><div><span class="in">Tonnarello cacio e pepe</span><span class="ia"> (A, G)</span></div><div style="display:flex; justify-content:flex-end; align-items:baseline; gap:8px;"><span class="ip" style="min-width:30px;">14€</span><span class="ip" style="width:65px; text-align:center; min-width:auto;">30€</span></div></div>
         <div class="id-en">tonnarello cacio e pepe</div>
-      </div>      <div class="it">
-        <div class="ir"><div><span class="in">Orecchiette alla positanese</span><span class="ia"> (A, G)</span></div><div style="display:flex; justify-content:flex-end; align-items:baseline; gap:8px;"><span class="ip" style="min-width:30px;">16€</span><span class="ip" style="width:65px; text-align:center; min-width:auto;">35€</span></div></div>
-        <div class="id">con ragù di salsiccia paesana, pomodoro ciliegino e burrata</div><div class="id-en">Positano style with village sausage ragout, cherry tomato and burrata</div>
       </div>
     </div>    <div class="md"><div class="mdc"><span></span><span></span><span></span></div></div>
 
     <div class="sec">
       <div class="sh">
-        <svg class="deco-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/>
+        <svg class="deco-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+          <!-- Steak / Meat -->
+          <path d="M14 36 C14 24 24 16 38 20 C50 24 54 36 46 44 C38 52 14 48 14 36 Z" />
+          <path d="M24 26 C26 30 28 36 26 40" />
+          <path d="M34 26 C36 30 38 36 36 40" />
+          <path d="M44 28 C46 32 46 36 44 38" />
         </svg>
         <span class="st">Secondi Piatti / Second Courses</span>
         
         <div class="so"><svg viewBox="0 0 60 12" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><line x1="0" y1="6" x2="20" y2="6" stroke-opacity="0.5"/><path d="M30 2 L34 6 L30 10 L26 6 Z" fill="currentColor" fill-opacity="0.2"/><line x1="40" y1="6" x2="60" y2="6" stroke-opacity="0.5"/></svg></div>
       </div>      <div class="it">
-        <div class="ir"><div><span class="in">Tagliata di entrecote di manzo</span><span class="ia"> (G)</span></div><div><span class="ip">22€</span></div></div>
-        <div class="id">con rucola, pomodorini pachino e scaglie di grana</div><div class="id-en">sliced beef entrecote with rocket, cherry tomatoes and parmesan flakes</div>
-      </div>      <div class="it">
         <div class="ir"><div><span class="in">Filetto di manzo al Barolo</span><span class="ia"> (G)</span></div><div><span class="ip">27€</span></div></div>
         <div class="id">su crema di patate al rosmarino</div><div class="id-en">Barolo beef fillet on rosemary potato cream</div>
+      </div>      <div class="it">
+        <div class="ir"><div><span class="in">Tagliata di entrecote di manzo</span><span class="ia"> (G)</span></div><div><span class="ip">22€</span></div></div>
+        <div class="id">con rucola, pomodorini pachino e scaglie di grana</div><div class="id-en">sliced beef entrecote with rocket, cherry tomatoes and parmesan flakes</div>
       </div>      <div class="it">
         <div class="ir"><div><span class="in">Polpettone della nonna</span><span class="ia"> (A, G)</span></div><div><span class="ip">18€</span></div></div>
         <div class="id">con spinaci, emmenthal e speck, il suo fondo e patate al cartoccio</div><div class="id-en">grandmother's meatloaf with spinach, emmental and speck with baked potatoes</div>
@@ -282,8 +280,13 @@
 
     <div class="sec">
       <div class="sh">
-        <svg class="deco-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        <svg class="deco-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+          <!-- Vintage Cake -->
+          <path d="M16 40 L20 56 H44 L48 40" />
+          <path d="M14 40 C14 40 32 48 50 40" />
+          <path d="M14 40 C14 26 24 20 32 20 C40 20 50 26 50 40" />
+          <circle cx="32" cy="14" r="4" />
+          <path d="M18 34 C24 38 28 28 32 34 C36 28 40 38 46 34" />
         </svg>
         <span class="st">Dolci / Dessert</span>
         
@@ -341,5 +344,9 @@
     </div>
   </div>
 </div>
+<!-- GSAP & Animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="js/menu-animations.js"></script>
 </body>
 </html>

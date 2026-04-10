@@ -147,37 +147,15 @@
   .ft{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:10px;
     color:var(--bur);opacity:.48;margin-top:6px;letter-spacing:.5px;}
   /* Icone Decoratiche */
-  .deco-icon { width: 34px; height: 34px; color: var(--gold); opacity: 0.8; margin: 0 auto 12px; display: block; stroke-width: 1.2px; }
+  .deco-icon { width: 44px; height: 44px; color: var(--gold); opacity: 0.8; margin: 0 auto 12px; display: block; stroke-width: 1.2px; }
   .so svg { width:60px; height:auto; color:var(--gold); }
 
-  /* Animazioni */
-  @keyframes fadeUp {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-  .inner > div {
-    animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
-  }
-  .inner > div:nth-child(1) { animation-delay: 0.1s; }
-  .inner > div:nth-child(2) { animation-delay: 0.15s; }
-  .inner > div:nth-child(3) { animation-delay: 0.2s; }
-  .inner > div:nth-child(4) { animation-delay: 0.25s; }
-  .inner > div:nth-child(5) { animation-delay: 0.3s; }
-  .inner > div:nth-child(6) { animation-delay: 0.35s; }
-  .inner > div:nth-child(7) { animation-delay: 0.4s; }
-  .inner > div:nth-child(8) { animation-delay: 0.45s; }
-  .inner > div:nth-child(9) { animation-delay: 0.5s; }
-  .inner > div:nth-child(10) { animation-delay: 0.55s; }
-  .inner > div:nth-child(11) { animation-delay: 0.6s; }
-  .inner > div:nth-child(12) { animation-delay: 0.65s; }
-  .inner > div:nth-child(13) { animation-delay: 0.7s; }
-  .inner > div:nth-child(14) { animation-delay: 0.75s; }
-  .inner > div:nth-child(15) { animation-delay: 0.8s; }
-  .inner > div:nth-child(16) { animation-delay: 0.85s; }
-  .inner > div:nth-child(17) { animation-delay: 0.9s; }
-  .inner > div:nth-child(18) { animation-delay: 0.95s; }
-  .inner > div:nth-child(19) { animation-delay: 1.0s; }
-  .inner > div:nth-child(20) { animation-delay: 1.05s; }
+  /* Hero Illustration Styles */
+  .hero-illustration { width: 100%; max-width: 600px; margin: 10px auto 30px; text-align: center; }
+  .hero-illustration svg { width: 85%; height: auto; color: var(--gold); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .hero-illustration video { width: 85%; max-width: 480px; height: auto; object-fit: contain; }
+
+  /* GSAP Animations handled in js/menu-animations.js */
 </style>
 </head><body>
 <div class="page">
@@ -191,10 +169,24 @@
       <div class="bsub">Wine &amp; Drink</div>
       <div class="orn"><div class="orn-d"></div></div>
     </div>
+    
+    <!-- MAIN HERO ILLUSTRATION CONTAINER -->
+    <div class="hero-illustration" id="hero-drink">
+      <video width="800" height="400" autoplay loop muted playsinline src="hero-drink.webm?v=5"></video>
+    </div>
+    
     <div class="sec">
       <div class="sh">
-        <svg class="deco-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 21V9"/><path d="M8 21h8"/><path d="M12 9l-4-6h8l-4 6z"/><circle cx="12" cy="5" r="1" fill="currentColor"/>
+        <svg class="deco-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+          <!-- Champagne / Bubbles -->
+          <path d="M26 8 L38 8" />
+          <path d="M30 8 V24 L26 34 A6 6 0 0 0 38 34 L34 24 V8" />
+          <path d="M32 40 V56" />
+          <path d="M22 56 H42" />
+          <circle cx="32" cy="18" r="1.5" />
+          <circle cx="34" cy="24" r="1" />
+          <circle cx="30" cy="28" r="2" />
+          <path d="M32 30 V34" />
         </svg>
         <span class="st">Bollicine</span>
         <span class="ss">Bubbles</span>
@@ -241,8 +233,13 @@
 
     <div class="sec">
       <div class="sh">
-        <svg class="deco-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M8 22h8"/><path d="M12 15v7"/><path d="M8 3h8c1.5 0 3 1.5 3 3v3c0 3-4 6-7 6s-7-3-7-6V6c0-1.5 1.5-3 3-3z"/>
+        <svg class="deco-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+          <!-- Wine Glass Premium -->
+          <path d="M16 12 C16 32 48 32 48 12" />
+          <path d="M32 32 V56" />
+          <path d="M20 56 H44" />
+          <path d="M16 18 C26 22 38 22 48 18" />
+          <path d="M28 44 C32 46 36 44 36 44" />
         </svg>
         <span class="st">Vini Rosati</span>
         <span class="ss">Rosé Wines</span>
@@ -255,8 +252,13 @@
 
     <div class="sec">
       <div class="sh">
-        <svg class="deco-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M8 22h8"/><path d="M12 15v7"/><path d="M8 3h8c1.5 0 3 1.5 3 3v3c0 3-4 6-7 6s-7-3-7-6V6c0-1.5 1.5-3 3-3z"/>
+        <svg class="deco-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+          <!-- Wine Glass Premium -->
+          <path d="M16 12 C16 32 48 32 48 12" />
+          <path d="M32 32 V56" />
+          <path d="M20 56 H44" />
+          <path d="M16 18 C26 22 38 22 48 18" />
+          <path d="M28 44 C32 46 36 44 36 44" />
         </svg>
         <span class="st">Vini Rossi</span>
         <span class="ss">Red Wines</span>
@@ -290,8 +292,13 @@
 
     <div class="sec">
       <div class="sh">
-        <svg class="deco-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M17 11h1a3 3 0 0 1 0 6h-1"/><path d="M9 12v6"/><path d="M13 12v6"/><path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 0-2.5 2.5V19a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8.5a2.5 2.5 0 0 0-2.5-2.5c-.78 0-1.5-.5-2.5-.5z"/><path d="M5 8v-.5A2.5 2.5 0 0 1 7.5 5h5A2.5 2.5 0 0 1 15 7.5V8"/>
+        <svg class="deco-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+          <!-- Beer Pint -->
+          <path d="M20 20 L24 54 C24 57 26 58 32 58 C38 58 40 57 40 54 L44 20" />
+          <path d="M42 30 H50 C54 30 54 44 50 44 H41" />
+          <path d="M24 20 C20 16 28 8 32 10 C36 8 46 16 42 20" />
+          <path d="M30 30 V50" />
+          <path d="M34 30 V48" />
         </svg>
         <span class="st">Birre</span>
         <span class="ss">Beer</span>
@@ -308,8 +315,14 @@
 
     <div class="sec">
       <div class="sh">
-        <svg class="deco-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 5h12l-6 7-6-7z"/><path d="M12 12v10"/><path d="M8 22h8"/>
+        <svg class="deco-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+          <!-- Martini Cocktail -->
+          <path d="M10 16 L32 38 L54 16 Z" />
+          <path d="M32 38 V58" />
+          <path d="M22 58 H42" />
+          <circle cx="38" cy="22" r="3" />
+          <path d="M42 18 L34 26" />
+          <path d="M18 24 L46 24" />
         </svg>
         <span class="st">Signature Cocktail</span>
         
@@ -330,8 +343,14 @@
 
     <div class="sec">
       <div class="sh">
-        <svg class="deco-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 5h12l-6 7-6-7z"/><path d="M12 12v10"/><path d="M8 22h8"/>
+        <svg class="deco-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+          <!-- Martini Cocktail -->
+          <path d="M10 16 L32 38 L54 16 Z" />
+          <path d="M32 38 V58" />
+          <path d="M22 58 H42" />
+          <circle cx="38" cy="22" r="3" />
+          <path d="M42 18 L34 26" />
+          <path d="M18 24 L46 24" />
         </svg>
         <span class="st">Non-Alcoholic Cocktail</span>
         
@@ -368,5 +387,9 @@
     </div>
   </div>
 </div>
+<!-- GSAP & Animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="js/menu-animations.js"></script>
 </body>
 </html>

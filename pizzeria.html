@@ -146,36 +146,14 @@
     color:var(--ink-s);opacity:.6;margin-top:4px;}
   .ft{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:10px;
     color:var(--bur);opacity:.48;margin-top:6px;letter-spacing:.5px;}
-  .deco-icon { width: 36px; height: 36px; margin: 0 auto 10px; display: block; color: var(--gold); opacity: 0.85; stroke-width: 1; }
+  .deco-icon { width: 44px; height: 44px; margin: 0 auto 12px; display: block; color: var(--gold); opacity: 0.8; stroke-width: 1.2px; }
+  
+  /* Hero Illustration Styles */
+  .hero-illustration { width: 100%; max-width: 600px; margin: 10px auto 30px; text-align: center; }
+  .hero-illustration svg { width: 85%; height: auto; color: var(--gold); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .hero-illustration video { width: 85%; max-width: 480px; height: auto; object-fit: contain; }
 
-  /* Animazioni */
-  @keyframes fadeUp {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-  .inner > div {
-    animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
-  }
-  .inner > div:nth-child(1) { animation-delay: 0.1s; }
-  .inner > div:nth-child(2) { animation-delay: 0.15s; }
-  .inner > div:nth-child(3) { animation-delay: 0.2s; }
-  .inner > div:nth-child(4) { animation-delay: 0.25s; }
-  .inner > div:nth-child(5) { animation-delay: 0.3s; }
-  .inner > div:nth-child(6) { animation-delay: 0.35s; }
-  .inner > div:nth-child(7) { animation-delay: 0.4s; }
-  .inner > div:nth-child(8) { animation-delay: 0.45s; }
-  .inner > div:nth-child(9) { animation-delay: 0.5s; }
-  .inner > div:nth-child(10) { animation-delay: 0.55s; }
-  .inner > div:nth-child(11) { animation-delay: 0.6s; }
-  .inner > div:nth-child(12) { animation-delay: 0.65s; }
-  .inner > div:nth-child(13) { animation-delay: 0.7s; }
-  .inner > div:nth-child(14) { animation-delay: 0.75s; }
-  .inner > div:nth-child(15) { animation-delay: 0.8s; }
-  .inner > div:nth-child(16) { animation-delay: 0.85s; }
-  .inner > div:nth-child(17) { animation-delay: 0.9s; }
-  .inner > div:nth-child(18) { animation-delay: 0.95s; }
-  .inner > div:nth-child(19) { animation-delay: 1.0s; }
-  .inner > div:nth-child(20) { animation-delay: 1.05s; }
+  /* GSAP Animations handled in js/menu-animations.js */
 </style>
 </head><body>
 <div class="page">
@@ -189,13 +167,23 @@
       <div class="bsub">Cucina &amp; Vino</div>
       <div class="orn"><div class="orn-d"></div></div>
     </div>
+    
+    <!-- MAIN HERO ILLUSTRATION CONTAINER -->
+    <div class="hero-illustration" id="hero-pizzeria">
+      <video width="800" height="460" autoplay loop muted playsinline src="hero-pizza.webm?v=5"></video>
+    </div>
+    
     <div class="sec">
       <div class="sh">
-        <svg class="deco-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-          <!-- Pizza Oven -->
-          <path d="M12 2C6.48 2 2 6.48 2 12v10h20V12c0-5.52-4.48-10-10-10z"/>
-          <path d="M8 22v-5a4 4 0 0 1 8 0v5"/>
-          <path d="M10 18c0 1.1.9 2 2 2s2-.9 2-2"/>
+        <svg class="deco-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+          <!-- Pizza Slice Premium Line Art -->
+          <path d="M4 14 C16 4 48 4 60 14 L32 58 Z" />
+          <path d="M6 18 C16 10 48 10 58 18" />
+          <circle cx="24" cy="28" r="3" />
+          <circle cx="40" cy="32" r="3.5" />
+          <circle cx="32" cy="42" r="2.5" />
+          <path d="M20 36 C22 34 26 36 28 34" />
+          <path d="M44 22 C42 24 40 22 38 24" />
         </svg>
         <span class="st">Pizzeria / Pizza</span>
         <span class="ss">Lievitazione 24/36 ore · Forno a legna</span>
@@ -369,5 +357,9 @@
     </div>
   </div>
 </div>
+<!-- GSAP & Animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="js/menu-animations.js"></script>
 </body>
 </html>
